@@ -1,0 +1,240 @@
+/*1. GLOBAL RESETS/ VARIABLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+    font-family: 'Inter', sans-serif; 
+}
+
+:root {
+    --primary-orange: #ff6600;
+    --dark-bg: #222222;
+    --nav-black: #1a1a1a;
+    --footer-black: #111111;
+    --text-white: #ffffff;
+    --text-gray: #888888;
+    --card-bg: #ffffff;
+    --body-bg: #f4f4f4;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Inter */
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: var(--body-bg);
+    color: var(--dark-bg);
+    /* სტანდარტული შრიფტის ზომა 1.6rem = 16px */
+    font-size: 1.6rem; 
+}
+
+
+/* 2. HEADER (Orange Section) */
+.main-header {
+    background-color: var(--primary-orange);
+    padding: 3rem 1rem;
+    text-align: center;
+    color: var(--text-white);
+}
+
+.logo-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.main-logo {
+    width: 4.5rem;
+    height: auto;
+    display: block;
+}
+
+.main-header h1 {
+    font-size: 3.2rem; /* Mobile font size */
+    margin: 0;
+    line-height: 1;
+}
+
+.tagline {
+    font-size: 1.4rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* 3. NAVIGATION (Black Bar)*/
+.main-nav {
+    background-color: var(--nav-black);
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-white);
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem;
+    transition: 0.3s ease;
+}
+
+.nav-link.active {
+    background-color: var(--primary-orange);
+    border-radius: 0.5rem;
+}
+
+.nav-link:hover:not(.active) {
+    color: var(--primary-orange);
+}
+
+/*  4. HERO SECTION (Dark Section)
+   */
+.hero {
+    background-color: var(--dark-bg);
+    background-image: linear-gradient(rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8)), 
+                      url('../assets/images/path2399.svg'); /* Konoha Logo Background */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 35rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.hero-title {
+    color: var(--text-white);
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    white-space: nowrap;
+    width: 588px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--text-white);
+    opacity: 0.8;
+}
+
+/* 
+   5. JUTSU CARDS SECTION (White Section)
+    */
+.jutsu-section {
+    padding: 4rem 2rem;
+    background-color: #ffffff;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile: 1 column */
+    gap: 2.5rem;
+    width: 100%;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    border-top: 0.5rem solid var(--primary-orange);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    object-fit: contain;
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    color: #1a1a1a;
+}
+
+.card p {
+    font-size: 1.4rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* 
+   6. FOOTER
+ */
+.main-footer {
+    background-color: var(--footer-black);
+    color: var(--text-gray);
+    text-align: center;
+    padding: 2.5rem 2rem;
+}
+
+.main-footer p {
+    font-size: 1.1rem;
+}
+
+/* 
+   7. DESKTOP BREAKPOINT (768px to 1920px)
+ */
+@media (min-width: 768px) {
+    .main-header {
+        padding: 4rem 1rem;
+    }
+
+    .main-header h1 {
+        font-size: 4.2rem;
+    }
+
+    .nav-list {
+        gap: 3rem;
+    }
+
+    .nav-link {
+        font-size: 1.4rem;
+    }
+
+    .hero-title {
+        font-size: 4.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.8rem;
+    }
+
+    /* Grid configuration for Desktop */
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns */
+        max-width: 1140px; /* Limits width at 1920px */
+        margin: 0 auto;
+    }
+
+    .jutsu-section {
+        padding: 8rem 2rem;
+    }
+}
